@@ -1,6 +1,6 @@
 # Customer Support AI Agent System
 
-A sophisticated multi-agent customer support chatbot built with Google ADK (Agent Development Kit) for the Kaggle Agents Intensive Capstone Project.
+A sophisticated multi-agent customer support chatbot built with Google Gemini AI for the Kaggle Agents Intensive Capstone Project.
 
 ## 🎯 Project Overview
 
@@ -58,34 +58,34 @@ This system demonstrates advanced AI agent orchestration using 4 specialized age
 
 ## 📚 Technologies Used
 
-- **Framework**: Google ADK (Agent Development Kit)
-- **LLM**: Gemini 2.0 Flash (via Google Generative AI)
+- **LLM**: Google Gemini 2.5 Flash (via google-generativeai library)
 - **API**: FastAPI + Uvicorn
 - **Frontend**: HTML5 + JavaScript (Vanilla)
-- **Language**: Python 3.9+
+- **Language**: Python 3.12+
 
 ## 📋 Prerequisites
 
-- Python 3.9 or higher
+- Python 3.12 or higher
 - Google API Key (for Gemini access)
 - pip (Python package manager)
 
 ## 🛠️ Installation
 
-### 1. Clone or Download the Project
+### 1. Clone the Repository
 
 ```powershell
-cd "L:\hee\Agents Intensive - Capstone Project"
+git clone https://github.com/Yourfiyan/customer-support-ai-agent.git
+cd customer-support-ai-agent
 ```
 
 ### 2. Set Up Python Environment (Recommended)
 
 ```powershell
 # Create virtual environment
-python -m venv venv
+python -m venv .venv
 
 # Activate virtual environment
-.\venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 
 # If you get execution policy error, run:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -99,19 +99,19 @@ pip install -r requirements.txt
 
 ### 4. Configure Google API Key
 
-Create a `.env` file in the project root:
+Copy the example file and add your API key:
 
 ```powershell
-# Create .env file
-@"
-GOOGLE_API_KEY=your-gemini-api-key-here
-"@ | Out-File -FilePath .env -Encoding utf8
+# Copy template
+Copy-Item .env.example .env
+
+# Edit .env and replace 'your_api_key_here' with your actual key
 ```
 
 **Get your free API key:**
-1. Visit: https://makersuite.google.com/app/apikey
+1. Visit: https://aistudio.google.com/apikey
 2. Create a new API key
-3. Copy and paste it into the `.env` file
+3. Paste it into the `.env` file
 
 ## 🎮 Usage
 
@@ -222,23 +222,21 @@ Test the system with these example questions:
 | Technical | "The app is running slowly" | Performance troubleshooting |
 | General | "What are your business hours?" | Support hours info |
 
-## 🎓 ADK Concepts Demonstrated
+## 🎓 Key Concepts Demonstrated
 
-This project showcases 5+ key concepts from the Kaggle Agents Intensive course:
+This project showcases key concepts from the Kaggle Agents Intensive course:
 
 1. **Multi-Agent Systems**: 4 specialized agents with distinct roles
-2. **Agent Orchestration**: Root agent coordinates workflow
-3. **Custom Tools**: FAQ search and email tools integration
-4. **LoopAgent Pattern**: Validation retry logic with max attempts
-5. **Event-Driven Actions**: EventActions for workflow control
-6. **System Instructions**: Precise role definition for each agent
-7. **Temperature Control**: Low temperature (0.2) for consistency
-8. **Session Memory**: Context preservation across agent interactions
+2. **Agent Orchestration**: Orchestrator coordinates workflow
+3. **Custom Tools**: FAQ search and email logging tools
+4. **Validation Loop**: Quality checking with retry logic
+5. **System Prompts**: Precise role definition for each agent
+6. **Temperature Control**: Low temperature (0.2) for consistency
 
 ## 📁 Project Structure
 
 ```
-L:\hee\Agents Intensive - Capstone Project\
+customer-support-ai-agent/
 │
 ├── agent.py              # Main multi-agent system
 ├── tools.py              # Custom FAQ search & email tools
@@ -307,7 +305,7 @@ python api_server.py
 1. **Create Dockerfile** (add to project):
 
 ```dockerfile
-FROM python:3.9-slim
+FROM python:3.12-slim
 
 WORKDIR /app
 
@@ -348,7 +346,7 @@ gcloud run deploy customer-support-agent \
 
 **For Kaggle Submission (30-60 seconds):**
 
-1. **Introduction** (5s): "Multi-agent customer support system built with Google ADK"
+1. **Introduction** (5s): "Multi-agent customer support system built with Google Gemini AI"
 2. **Architecture** (10s): Show 4-agent diagram, explain workflow
 3. **Demo** (30s): 
    - Open web interface
@@ -360,10 +358,12 @@ gcloud run deploy customer-support-agent \
 
 ## 🐛 Troubleshooting
 
-### Error: "google-adk not found"
+### Error: "Module not found"
+
+Reinstall dependencies:
 
 ```powershell
-pip install google-adk google-generativeai
+pip install -r requirements.txt
 ```
 
 ### Error: "GOOGLE_API_KEY not found"
@@ -411,15 +411,14 @@ MIT License - feel free to use this project for learning and portfolio purposes.
 ## 🙏 Acknowledgments
 
 - **Kaggle Agents Intensive** - For the excellent 5-day course
-- **Google ADK Team** - For the powerful agent development framework
-- **Gemini 2.0 Flash** - For fast, accurate LLM responses
+- **Google Gemini Team** - For the powerful AI API
+- **Gemini 2.5 Flash** - For fast, accurate LLM responses
 
 ## 📚 Resources
 
-- [Google ADK Documentation](https://developers.google.com/adk)
-- [Gemini API Reference](https://ai.google.dev/docs)
+- [Google Gemini API](https://ai.google.dev/docs)
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [Kaggle Agents Intensive](https://www.kaggle.com/)
+- [Kaggle Agents Intensive](https://www.kaggle.com/learn/agents)
 
 ---
 
