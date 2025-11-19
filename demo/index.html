@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support AI Agent - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .quick-questions {
+            margin-bottom: 20px;
+        }
+
+        .quick-questions p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .quick-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .quick-btn {
+            padding: 8px 15px;
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quick-btn:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .response-container {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .response-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #667eea;
+            color: white;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .response-meta {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .response-text {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.6;
+            color: #333;
+            white-space: pre-wrap;
+            margin-top: 15px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        .error {
+            background: #fee;
+            border-left-color: #f44336;
+            color: #c00;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .new-inquiry-btn {
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .new-inquiry-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .quick-buttons {
+                flex-direction: column;
+            }
+
+            .quick-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Customer Support AI Agent</h1>
+            <p>Multi-Agent System powered by Google ADK & Gemini 2.0 Flash</p>
+        </div>
+
+        <div class="content">
+            <form id="inquiryForm">
+                <div class="form-group">
+                    <label for="email">Your Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="customer@example.com" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="question">How can we help you?</label>
+                    <div class="quick-questions">
+                        <p>Quick questions:</p>
+                        <div class="quick-buttons">
+                            <button type="button" class="quick-btn" data-question="I forgot my password. How do I reset it?">🔐 Password Reset</button>
+                            <button type="button" class="quick-btn" data-question="How do I change my email address?">📧 Change Email</button>
+                            <button type="button" class="quick-btn" data-question="Where can I find my billing invoices?">💳 View Invoices</button>
+                            <button type="button" class="quick-btn" data-question="The app is running very slowly. What should I do?">⚡ Slow Performance</button>
+                            <button type="button" class="quick-btn" data-question="How do I contact customer support?">📞 Contact Support</button>
+                        </div>
+                    </div>
+                    <textarea 
+                        id="question" 
+                        name="question" 
+                        placeholder="Type your question here or click a quick question above..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Submit Inquiry
+                </button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Processing your inquiry through our AI agents...</p>
+                <p style="font-size: 12px; color: #666; margin-top: 10px;">
+                    Classifying → Researching → Writing → Validating
+                </p>
+            </div>
+
+            <div class="response-container" id="responseContainer">
+                <div class="response-header">
+                    <span class="category-badge" id="categoryBadge">ACCOUNT</span>
+                    <div class="response-meta">
+                        <span id="processingTime">1.2s</span> • 
+                        <span id="faqCount">2 FAQs</span> • 
+                        <span id="validationStatus">✓ Validated</span>
+                    </div>
+                </div>
+
+                <div class="response-text" id="responseText">
+                    Your response will appear here...
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="statCategory">-</div>
+                        <div class="stat-label">Category</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="statFaqs">-</div>
+                        <div class="stat-label">FAQs Used</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="statTime">-</div>
+                        <div class="stat-label">Response Time</div>
+                    </div>
+                </div>
+
+                <button class="new-inquiry-btn" id="newInquiryBtn">
+                    Submit Another Inquiry
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                Kaggle Agents Intensive - Capstone Project<br>
+                Multi-Agent Architecture: Classifier → Researcher → Writer → Validator
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const API_URL = 'http://localhost:8000/api/support/inquiry';
+
+        // DOM Elements
+        const form = document.getElementById('inquiryForm');
+        const emailInput = document.getElementById('email');
+        const questionInput = document.getElementById('question');
+        const submitBtn = document.getElementById('submitBtn');
+        const loading = document.getElementById('loading');
+        const responseContainer = document.getElementById('responseContainer');
+        const quickButtons = document.querySelectorAll('.quick-btn');
+        const newInquiryBtn = document.getElementById('newInquiryBtn');
+
+        // Quick question buttons
+        quickButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                questionInput.value = btn.dataset.question;
+                questionInput.focus();
+            });
+        });
+
+        // Form submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+            const question = questionInput.value.trim();
+
+            if (!email || !question) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Show loading state
+            form.style.display = 'none';
+            loading.style.display = 'block';
+            responseContainer.style.display = 'none';
+            submitBtn.disabled = true;
+
+            try {
+                // Call API
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        question: question
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.detail || 'Failed to process inquiry');
+                }
+
+                // Display response
+                displayResponse(data);
+
+            } catch (error) {
+                console.error('Error:', error);
+                displayError(error.message);
+            } finally {
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Display successful response
+        function displayResponse(data) {
+            responseContainer.style.display = 'block';
+            responseContainer.classList.remove('error');
+
+            // Update category badge
+            const categoryBadge = document.getElementById('categoryBadge');
+            categoryBadge.textContent = data.category.toUpperCase();
+            categoryBadge.style.background = getCategoryColor(data.category);
+
+            // Update metadata
+            document.getElementById('processingTime').textContent = 
+                `${(data.processing_time_ms / 1000).toFixed(2)}s`;
+            document.getElementById('faqCount').textContent = 
+                `${data.faq_count} FAQ${data.faq_count !== 1 ? 's' : ''}`;
+            document.getElementById('validationStatus').textContent = 
+                data.validation_status === 'approved' ? '✓ Validated' : '⚠ Needs Review';
+
+            // Update response text
+            document.getElementById('responseText').textContent = data.response;
+
+            // Update stats
+            document.getElementById('statCategory').textContent = data.category;
+            document.getElementById('statFaqs').textContent = data.faq_count;
+            document.getElementById('statTime').textContent = 
+                `${(data.processing_time_ms / 1000).toFixed(2)}s`;
+
+            // Scroll to response
+            responseContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Display error
+        function displayError(message) {
+            responseContainer.style.display = 'block';
+            responseContainer.classList.add('error');
+
+            document.getElementById('categoryBadge').textContent = 'ERROR';
+            document.getElementById('categoryBadge').style.background = '#f44336';
+
+            document.getElementById('responseText').textContent = 
+                `❌ Error: ${message}\n\nPlease make sure the API server is running on http://localhost:8000`;
+
+            // Hide stats for errors
+            document.querySelector('.stats').style.display = 'none';
+        }
+
+        // Get color for category
+        function getCategoryColor(category) {
+            const colors = {
+                'account': '#667eea',
+                'billing': '#f59e0b',
+                'technical': '#ef4444',
+                'general': '#10b981'
+            };
+            return colors[category] || '#667eea';
+        }
+
+        // New inquiry button
+        newInquiryBtn.addEventListener('click', () => {
+            form.style.display = 'block';
+            responseContainer.style.display = 'none';
+            questionInput.value = '';
+            questionInput.focus();
+        });
+
+        // Initialize with default email for testing
+        emailInput.value = 'demo@example.com';
+    </script>
+</body>
+</html>

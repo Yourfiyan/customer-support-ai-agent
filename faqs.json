@@ -1,0 +1,58 @@
+{
+  "account": {
+    "password_reset": {
+      "question": "How do I reset my password?",
+      "answer": "To reset your password: 1) Go to Settings > Security > Reset Password. 2) Click the 'Forgot Password' link. 3) Enter your email address. 4) Check your inbox for a reset link (valid for 24 hours). 5) Create a new strong password with at least 8 characters."
+    },
+    "update_email": {
+      "question": "How do I change my email address?",
+      "answer": "To update your email: 1) Navigate to Profile > Edit > Change Email. 2) Enter your new email address. 3) A verification code will be sent to the new email. 4) Enter the 6-digit code within 15 minutes. 5) Your email will be updated immediately."
+    },
+    "account_locked": {
+      "question": "My account is locked. What should I do?",
+      "answer": "If your account is locked: 1) Wait 30 minutes for automatic unlock after 3 failed login attempts. 2) Or click 'Unlock Account' on the login page. 3) Verify your identity via email or SMS. 4) Set a new password if prompted. Contact support@example.com if issues persist."
+    },
+    "delete_account": {
+      "question": "How can I delete my account?",
+      "answer": "To delete your account: 1) Go to Settings > Privacy > Delete Account. 2) Review the consequences (data loss is permanent). 3) Enter your password to confirm. 4) Click 'Delete Account'. 5) You'll receive a confirmation email. You have 30 days to cancel deletion before it becomes permanent."
+    }
+  },
+  "billing": {
+    "billing_question": {
+      "question": "Where can I view my billing history?",
+      "answer": "To access billing information: 1) Navigate to Account > Billing > Invoice History. 2) View all past invoices and receipts. 3) Download PDFs for your records. 4) For billing disputes or questions, contact billing@support.com with your account ID and invoice number."
+    },
+    "payment_method": {
+      "question": "How do I update my payment method?",
+      "answer": "To update payment information: 1) Go to Account > Billing > Payment Methods. 2) Click 'Add Payment Method' or edit existing. 3) Enter card details or link PayPal. 4) Set as default if desired. 5) Old cards can be removed after setting a new default."
+    },
+    "refund_request": {
+      "question": "How do I request a refund?",
+      "answer": "To request a refund: 1) Refunds are available within 30 days of purchase. 2) Go to Account > Billing > Orders. 3) Select the order and click 'Request Refund'. 4) Provide a reason. 5) Refunds process within 5-7 business days. For assistance, email billing@support.com."
+    }
+  },
+  "technical": {
+    "technical_issue": {
+      "question": "I'm experiencing a technical error. What should I do?",
+      "answer": "For technical issues: 1) Clear your browser cache and cookies. 2) Try a different browser (Chrome, Firefox, Safari). 3) Disable browser extensions temporarily. 4) Check your internet connection. 5) If the problem persists, email tech@support.com with screenshots, error messages, and browser details."
+    },
+    "app_not_loading": {
+      "question": "The app won't load. How can I fix this?",
+      "answer": "If the app isn't loading: 1) Force quit and restart the app. 2) Check for app updates in your app store. 3) Ensure you have a stable internet connection. 4) Restart your device. 5) Uninstall and reinstall if needed. Contact tech@support.com if issues continue."
+    },
+    "slow_performance": {
+      "question": "Why is the service running slowly?",
+      "answer": "To improve performance: 1) Close unnecessary browser tabs. 2) Clear browser cache (Settings > Privacy > Clear Data). 3) Check your internet speed at speedtest.net (minimum 5 Mbps recommended). 4) Disable VPN temporarily. 5) Try during off-peak hours. Report persistent issues to tech@support.com."
+    }
+  },
+  "general": {
+    "contact_support": {
+      "question": "How do I contact customer support?",
+      "answer": "Contact us via: 1) Email: support@example.com (24-48 hour response). 2) Live Chat: Available Mon-Fri 9am-6pm EST. 3) Phone: 1-800-SUPPORT (business hours). 4) Help Center: help.example.com for instant answers. 5) Social Media: @ExampleSupport on Twitter."
+    },
+    "business_hours": {
+      "question": "What are your business hours?",
+      "answer": "Our support hours are: Monday-Friday: 9:00 AM - 6:00 PM EST. Saturday: 10:00 AM - 4:00 PM EST. Sunday: Closed (emergency support via email only). Live chat and phone support available during these hours. Email support operates 24/7 with responses within 24-48 hours."
+    }
+  }
+}
