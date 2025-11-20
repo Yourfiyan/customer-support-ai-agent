@@ -15,6 +15,22 @@
     "delete_account": {
       "question": "How can I delete my account?",
       "answer": "To delete your account: 1) Go to Settings > Privacy > Delete Account. 2) Review the consequences (data loss is permanent). 3) Enter your password to confirm. 4) Click 'Delete Account'. 5) You'll receive a confirmation email. You have 30 days to cancel deletion before it becomes permanent."
+    },
+    "update_profile": {
+      "question": "How do I update my profile information?",
+      "answer": "To update your profile: 1) Click on your profile icon in the top right. 2) Select 'Edit Profile'. 3) Update your name, phone number, address, or profile picture. 4) Click 'Save Changes'. 5) Your profile will be updated instantly. Note: Some changes may require email verification."
+    },
+    "two_factor_authentication": {
+      "question": "How do I enable two-factor authentication?",
+      "answer": "To enable 2FA: 1) Go to Settings > Security > Two-Factor Authentication. 2) Click 'Enable 2FA'. 3) Choose your method: SMS, authenticator app, or email. 4) Follow the setup instructions. 5) Save your backup codes in a safe place. You'll need to enter a code each time you log in from a new device."
+    },
+    "username_change": {
+      "question": "Can I change my username?",
+      "answer": "Yes, you can change your username once every 30 days. To change it: 1) Go to Settings > Account > Username. 2) Enter your new username (must be unique and 3-20 characters). 3) Click 'Check Availability'. 4) If available, click 'Update Username'. 5) Your old username becomes available for others after 90 days."
+    },
+    "login_issues": {
+      "question": "I can't log into my account. What should I do?",
+      "answer": "If you're having login issues: 1) Verify you're using the correct email/username. 2) Check if Caps Lock is on. 3) Try resetting your password. 4) Clear browser cache and cookies. 5) Try a different browser or device. 6) Check if your account is locked. If none of these work, contact support@example.com with your account details."
     }
   },
   "billing": {
@@ -29,6 +45,30 @@
     "refund_request": {
       "question": "How do I request a refund?",
       "answer": "To request a refund: 1) Refunds are available within 30 days of purchase. 2) Go to Account > Billing > Orders. 3) Select the order and click 'Request Refund'. 4) Provide a reason. 5) Refunds process within 5-7 business days. For assistance, email billing@support.com."
+    },
+    "subscription_plans": {
+      "question": "What subscription plans do you offer?",
+      "answer": "We offer three subscription plans: 1) Basic ($9.99/month) - Core features, 5 projects, 10GB storage. 2) Pro ($24.99/month) - Advanced features, unlimited projects, 100GB storage, priority support. 3) Enterprise (Custom pricing) - Full features, dedicated account manager, custom integrations, unlimited storage. Annual billing gets 20% discount."
+    },
+    "cancel_subscription": {
+      "question": "How do I cancel my subscription?",
+      "answer": "To cancel your subscription: 1) Go to Account > Billing > Subscription. 2) Click 'Cancel Subscription'. 3) Select a reason (optional but helpful). 4) Confirm cancellation. 5) You'll retain access until the end of your billing period. No refunds for partial months. You can reactivate anytime."
+    },
+    "upgrade_downgrade": {
+      "question": "Can I upgrade or downgrade my plan?",
+      "answer": "Yes! To change plans: 1) Go to Account > Billing > Change Plan. 2) Select your new plan. 3) Upgrades take effect immediately with prorated charges. 4) Downgrades take effect at the next billing cycle. 5) You'll receive a confirmation email. Data migration happens automatically."
+    },
+    "payment_failed": {
+      "question": "My payment failed. What should I do?",
+      "answer": "If your payment failed: 1) Check if your card is valid and not expired. 2) Ensure sufficient funds are available. 3) Update your payment method in Account > Billing. 4) Contact your bank to ensure international transactions are allowed. 5) We'll retry payment in 3 days. After 3 failed attempts, your account may be suspended."
+    },
+    "billing_address": {
+      "question": "How do I update my billing address?",
+      "answer": "To update your billing address: 1) Navigate to Account > Billing > Billing Information. 2) Click 'Edit Address'. 3) Enter your new address details. 4) Click 'Save Changes'. 5) Your next invoice will reflect the new address. Past invoices remain unchanged."
+    },
+    "tax_invoice": {
+      "question": "How do I get a tax invoice?",
+      "answer": "To obtain tax invoices: 1) Go to Account > Billing > Invoice History. 2) Click on any invoice. 3) Select 'Download Tax Invoice' (includes VAT/GST details). 4) For custom tax documents, email billing@support.com with your tax ID and requirements. We provide invoices in compliance with local tax regulations."
     }
   },
   "technical": {
@@ -43,6 +83,34 @@
     "slow_performance": {
       "question": "Why is the service running slowly?",
       "answer": "To improve performance: 1) Close unnecessary browser tabs. 2) Clear browser cache (Settings > Privacy > Clear Data). 3) Check your internet speed at speedtest.net (minimum 5 Mbps recommended). 4) Disable VPN temporarily. 5) Try during off-peak hours. Report persistent issues to tech@support.com."
+    },
+    "connection_error": {
+      "question": "I keep getting connection errors. How do I fix this?",
+      "answer": "To resolve connection errors: 1) Check your internet connection (try loading other websites). 2) Restart your router/modem. 3) Disable firewall or antivirus temporarily to test. 4) Try using a wired connection instead of WiFi. 5) Check if our service status page shows any outages. 6) Use a VPN if your network blocks certain services. Contact tech@support.com if errors persist."
+    },
+    "mobile_app_crash": {
+      "question": "The mobile app keeps crashing. What should I do?",
+      "answer": "If the app crashes frequently: 1) Update to the latest version from App Store/Play Store. 2) Restart your phone. 3) Clear app cache (Settings > Apps > [App Name] > Clear Cache). 4) Free up storage space (at least 1GB recommended). 5) Check if your OS version is supported (iOS 14+ or Android 8+). 6) Uninstall and reinstall the app. Report crashes with device model and OS version to tech@support.com."
+    },
+    "data_sync_issue": {
+      "question": "My data isn't syncing across devices. How do I fix this?",
+      "answer": "To fix sync issues: 1) Ensure you're logged into the same account on all devices. 2) Check internet connection on both devices. 3) Go to Settings > Sync > Force Sync. 4) Verify sync is enabled (Settings > Sync > Enable Auto-Sync). 5) Log out and log back in. 6) Check if you have storage space available. Sync typically takes 1-5 minutes. Contact tech@support.com if syncing fails after 30 minutes."
+    },
+    "file_upload_error": {
+      "question": "I can't upload files. What's wrong?",
+      "answer": "For file upload issues: 1) Check file size (max 100MB per file). 2) Verify file format is supported (PDF, JPG, PNG, DOCX, XLSX). 3) Ensure you have storage space available. 4) Try a different browser. 5) Disable browser extensions. 6) Check internet speed (minimum 2 Mbps upload). 7) Try compressing large files. If uploading multiple files, try one at a time."
+    },
+    "notification_not_working": {
+      "question": "I'm not receiving notifications. How do I enable them?",
+      "answer": "To enable notifications: 1) Check app settings: Settings > Notifications > Enable. 2) Verify device settings allow notifications for our app. 3) On iOS: Settings > [App] > Notifications > Allow. 4) On Android: Settings > Apps > [App] > Notifications > On. 5) Check Do Not Disturb mode is off. 6) Log out and log back in. 7) Reinstall the app if needed. Test by sending yourself a test notification."
+    },
+    "browser_compatibility": {
+      "question": "Which browsers are supported?",
+      "answer": "Supported browsers: 1) Chrome 90+ (recommended for best performance). 2) Firefox 88+. 3) Safari 14+. 4) Edge 90+. 5) Opera 75+. We recommend keeping browsers updated to the latest version. Internet Explorer is not supported. For mobile: iOS Safari 14+ and Chrome for Android 90+. Use desktop site mode on mobile browsers for full features."
+    },
+    "export_data": {
+      "question": "How do I export my data?",
+      "answer": "To export your data: 1) Go to Settings > Data & Privacy > Export Data. 2) Select data types to export (documents, settings, history). 3) Choose format: JSON, CSV, or PDF. 4) Click 'Request Export'. 5) You'll receive an email when export is ready (typically 1-24 hours). 6) Download link is valid for 7 days. Export includes all data from the last 12 months."
     }
   },
   "general": {
@@ -53,6 +121,46 @@
     "business_hours": {
       "question": "What are your business hours?",
       "answer": "Our support hours are: Monday-Friday: 9:00 AM - 6:00 PM EST. Saturday: 10:00 AM - 4:00 PM EST. Sunday: Closed (emergency support via email only). Live chat and phone support available during these hours. Email support operates 24/7 with responses within 24-48 hours."
+    },
+    "getting_started": {
+      "question": "How do I get started with your service?",
+      "answer": "Getting started is easy: 1) Sign up for a free account at example.com/signup. 2) Verify your email address. 3) Complete the onboarding tutorial (5 minutes). 4) Choose a subscription plan or continue with free tier. 5) Watch our quick start video guide. 6) Check out our knowledge base at help.example.com. Need help? Our support team is ready to assist!"
+    },
+    "free_trial": {
+      "question": "Do you offer a free trial?",
+      "answer": "Yes! We offer a 14-day free trial of our Pro plan with no credit card required. Trial includes: 1) Full access to all Pro features. 2) Unlimited projects. 3) 100GB storage. 4) Priority support. After trial: 1) Choose a paid plan to continue. 2) Or downgrade to free plan (keeps your data). 3) You'll receive reminders at 7 days and 1 day before trial ends."
+    },
+    "data_security": {
+      "question": "How do you protect my data?",
+      "answer": "We take security seriously: 1) 256-bit SSL/TLS encryption for data in transit. 2) AES-256 encryption for data at rest. 3) SOC 2 Type II certified. 4) GDPR and CCPA compliant. 5) Regular security audits and penetration testing. 6) Two-factor authentication available. 7) Automated backups every 6 hours. 8) Data centers in secure facilities. We never sell your data to third parties."
+    },
+    "features_comparison": {
+      "question": "What's the difference between free and paid plans?",
+      "answer": "Plan comparison: FREE: 5 projects, 2GB storage, basic features, community support. PRO ($24.99/mo): Unlimited projects, 100GB storage, advanced features, priority support, API access, custom domains. ENTERPRISE (custom): Everything in Pro plus dedicated account manager, custom integrations, SLA guarantee, unlimited storage, advanced security, training sessions. Upgrade/downgrade anytime."
+    },
+    "privacy_policy": {
+      "question": "Where can I read your privacy policy?",
+      "answer": "Our privacy policy is available at example.com/privacy. Key points: 1) We collect only necessary data to provide services. 2) We don't sell personal information. 3) You can request data deletion anytime. 4) We use cookies for functionality and analytics. 5) You control your privacy settings. 6) We comply with GDPR, CCPA, and other privacy laws. Last updated: January 2025. Contact privacy@example.com for questions."
+    },
+    "terms_of_service": {
+      "question": "What are your terms of service?",
+      "answer": "Full terms are at example.com/terms. Summary: 1) You must be 18+ to use our service. 2) You're responsible for account security. 3) Prohibited: illegal activities, abuse, spam. 4) We reserve the right to suspend accounts violating terms. 5) 30-day refund policy. 6) We may update terms with 30-day notice. 7) Disputes resolved through arbitration. Contact legal@example.com for specific questions."
+    },
+    "api_access": {
+      "question": "Do you provide API access?",
+      "answer": "Yes! API access is available with Pro and Enterprise plans. Features: 1) RESTful API with comprehensive documentation. 2) Rate limits: Pro (1000 requests/hour), Enterprise (custom). 3) Webhooks for real-time events. 4) Client libraries for Python, JavaScript, Ruby. 5) API keys management in dashboard. 6) Developer sandbox for testing. Visit developers.example.com for documentation and API keys."
+    },
+    "mobile_app": {
+      "question": "Is there a mobile app available?",
+      "answer": "Yes! Our mobile apps are available for: 1) iOS: Download from App Store (iOS 14+). 2) Android: Download from Google Play (Android 8+). Features: Sync across devices, offline mode, push notifications, camera integration, biometric login. The mobile app includes most desktop features. Some advanced features require Pro plan. Apps are updated monthly with improvements."
+    },
+    "system_status": {
+      "question": "How can I check if your service is down?",
+      "answer": "Check service status at: 1) status.example.com - Real-time status dashboard. 2) Subscribe to status updates via email/SMS. 3) Follow @ExampleStatus on Twitter for updates. 4) In-app status indicator. We post: Operational status, scheduled maintenance, incident reports, and resolution updates. 99.9% uptime SLA for Pro/Enterprise. Historical uptime data available on status page."
+    },
+    "feedback_suggestions": {
+      "question": "How can I provide feedback or suggestions?",
+      "answer": "We love hearing from you! Share feedback via: 1) In-app feedback button (Settings > Send Feedback). 2) Email: feedback@example.com. 3) Feature requests: feedback.example.com/requests (vote on existing ideas). 4) User surveys (sent quarterly). 5) Beta testing program (join at beta.example.com). We review all feedback and prioritize based on user votes and business needs. You'll receive updates on implemented suggestions."
     }
   }
 }
